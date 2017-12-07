@@ -16,12 +16,4 @@ function draw() {
     speed = -5;
   }
   x = x + speed;
-
-
-
-
-
-
-
-
 }
