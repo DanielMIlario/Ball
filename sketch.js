@@ -14,6 +14,8 @@ function draw() {
 
   if (x > width) {
     speed = -5;
+  } else if (x < 0) {
+    speed = 5;
   }
-  x = x + speed;
+   x = x + speed;
 }
