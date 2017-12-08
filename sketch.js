@@ -1,5 +1,9 @@
 var x = 0;
-var speed = 5;
+var y = 0;
+var speed = {
+  x:5,
+  y:5,
+}
 
 function setup () {
   createCanvas(2000, 1000)
@@ -10,12 +14,18 @@ function draw() {
   stroke(51)
   strokeWeight(6);
   fill(0, 0, 255);
-  ellipse(x, 500, 100, 100);
+  ellipse(x, y, 100, 100);
 
-  if (x > width) {
-    speed = -5;
+  if (x > (width - 50)) {
+    speed.x = -5;
   } else if (x < 0) {
-    speed = 5;
+    speed.x = 5;
   }
-   x = x + speed;
+  if (y > (height - 50)) {
+    speed.y = -5;
+  } else if (y < 0) {
+    speed.y = 5;
+  }
+  y = y + speed.y;
+  x = x + speed.x;
 }
