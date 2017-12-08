@@ -28,4 +28,15 @@ function draw() {
   }
   y = y + speed.y;
   x = x + speed.x;
+  }
+
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+  speed.x = speed.x - 1;
+} else if (keyCode === RIGHT_ARROW) {
+  speed.x = speed.x + 1;
+} if (keyCode === DOWN_ARROW) {
+  speed.y = speed.y - 1;
+} else if (keyCode === UP_ARROW) {
+  speed.y = speed.y + 1;
 }
