@@ -5,6 +5,9 @@ var speed = {
   y:5,
 }
 
+var rectWidth = 20
+var rectHeight = 150
+
 function setup () {
   createCanvas(2000, 1000)
 }
@@ -15,7 +18,11 @@ function draw() {
   strokeWeight(6);
   fill(0, 0, 255);
   ellipse(x, y, 100, 100);
+  rect(100, mouseY - 75, 20, 150)
 
+  if(x + 50 == mouseY) {
+    speed.x = 15
+  }
   if (x > (width - 50)) {
     speed.x = -5;
   } else if (x < 0) {
