@@ -40,3 +40,4 @@ function keyPressed() {
 } else if (keyCode === UP_ARROW) {
   speed.y = speed.y + 1;
 }
+}
