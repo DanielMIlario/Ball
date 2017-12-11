@@ -29,22 +29,22 @@ function draw() {
   noStroke();
   background(50, 100, 50)
   fill(0, 0, 255);
-  // ellipse(mouseX, mouseY, 100, 100);
-  rect(200, 300, 20, 150);
-  var isInY = (mouseY > 300) && (mouseY < 450)
-  var isInX = (mouseX > 200) && (mouseX < 220)
+  ellipse(x, y, 100, 100);
+  rect(200, mouseY, 20, 150);
+  var isInY = (y > mouseY) && (y < (mouseY + 150))
+  var isInX = (x > 200) && (x < 220)
   // is in the frame
-  // isInWidth(x);
-  // isInHeight(y);
+  isInWidth(x);
+  isInHeight(y);
 if (isInX && isInY) {
-  ellipse(width / 2, height / 2, 20, 20)
+  speed.x = -speed.x;
 }
+  y = y + speed.y;
+  x = x + speed.x;
+
 
 
   // Has collided with the paddle
-
-  y = y + speed.y;
-  x = x + speed.x;
 }
 
 function keyPressed() {
