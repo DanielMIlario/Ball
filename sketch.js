@@ -32,7 +32,7 @@ function draw() {
   ellipse(x, y, 100, 100);
   rect(200, mouseY, 20, 150);
   var isInY = (y > mouseY) && (y < (mouseY + 150))
-  var isInX = (x > 200) && (x < 220)
+  var isInX = (x > 170) && (x < 250)
   // is in the frame
   isInWidth(x);
   isInHeight(y);
