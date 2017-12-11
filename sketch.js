@@ -33,7 +33,7 @@ function draw() {
   rect(200, 300, 20, 150);
   var isInY = (mouseY > 300) && (mouseY < 450)
   var isInX = (mouseX > 200) && (mouseX < 220)
-  is in the frame
+//   is in the frame
   isInWidth(x);
   isInHeight(y);
 if (isInX && isInY) {
