@@ -29,13 +29,13 @@ function draw() {
   noStroke();
   background(50, 100, 50)
   fill(0, 0, 255);
-  // ellipse(mouseX, mouseY, 100, 100);
+  ellipse(mouseX, mouseY, 100, 100);
   rect(200, 300, 20, 150);
   var isInY = (mouseY > 300) && (mouseY < 450)
   var isInX = (mouseX > 200) && (mouseX < 220)
-  // is in the frame
-  // isInWidth(x);
-  // isInHeight(y);
+  is in the frame
+  isInWidth(x);
+  isInHeight(y);
 if (isInX && isInY) {
   ellipse(width / 2, height / 2, 20, 20)
 }
