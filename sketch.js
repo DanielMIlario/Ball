@@ -29,9 +29,9 @@ function isInHeight(ballY) {
 
 function isInWidth2(ballX2) {
   if (ballX2 > (width - 50)) {
-    speed.x2 = -5;
+    speed.x = -5;
   } else if (ballX2 < 0) {
-    speed.x2 = 5;
+    speed.x = 5;
   }
 }
 
