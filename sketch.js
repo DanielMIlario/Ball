@@ -1,7 +1,11 @@
 var x = 1800;
 var y = 0;
-var w = 1800;
-var z = 100;
+var w = 1500;
+var z = 450;
+var B1x = 300;
+var B1y = 300;
+var B2x = 300;
+var B2y = 300;
 var height = 1000
 var width = 2000
 var speed = {
@@ -24,9 +28,9 @@ function isInWidth(ballX) {
     textSize(125);
     fill(0, 0, 255);
     text("You Lose!", 80, 400);
-    window.setTimeout(function() {
-      window.location.href = window.location.href;
-    }, 1000*3);
+  //   window.setTimeout(function() {
+  //     window.location.href = window.location.href;
+  //   }, 1000*3);
   }
 }
 
@@ -42,15 +46,17 @@ function draw() {
   noStroke();
   background(50, 100, 50)
   fill(0, 0, 255);
-  ellipse(x, y, 100, 100);
+  ellipse(x, y, B1x, B1y);
   fill(255, 0, 0);
-  ellipse(w, z, 150, 150);
+  ellipse(w, z, B2x, B2y);
   fill(0, 255, 0);
   rect(200, mouseY, 20, 150);
   var isInY = (y > mouseY) && (y < (mouseY + 150))
   var isInX = (x > 170) && (x < 250)
   var isInZ = (z > mouseY) && (z < (mouseY + 150))
   var isInW = (w > 170) && (w < 250)
+  var B1g = (B1x <= 0) && (B1y <= 0)
+  var B2g = (B2x <= 0) && (B2y <= 0)
   // is in the frame
   isInWidth(x);
   isInHeight(y);
@@ -65,19 +71,28 @@ function draw() {
     speed2.w = -7;
   } else if (w < 0) {
     textSize(125);
-    fill(0, 0, 255);
+    fill(255, 0, 0);
     text("You Lose!", 80, 400);
-    window.setTimeout(function() {
-      window.location.href = window.location.href;
-    }, 1000*3);
+    // window.setTimeout(function() {
+    //   window.location.href = window.location.href;
+    // }, 1000*3);
   }
 
 
 if (isInX && isInY) {
   speed.x = -speed.x;
+  B1x = B1x - 50;
+  B1y = B1y - 50;
 }
 if (isInZ && isInW) {
   speed2.w = -speed2.w;
+  B2x = B2x - 50;
+  B2y = B2y - 50;
+}
+if (B1g && B2g) {
+  textSize(125);
+  fill(0, 0, 255);
+  text("Level Completed!", 80, 400);
 }
   y = y + speed.y;
   x = x + speed.x;
