@@ -1,4 +1,4 @@
-var x = 0;
+var x = 1800;
 var y = 0;
 var w = 1800;
 var z = 100;
@@ -21,7 +21,12 @@ function isInWidth(ballX) {
   if (ballX > (width - 50)) {
     speed.x = -5;
   } else if (ballX < 0) {
-    speed.x = 5;
+    textSize(125);
+    fill(0, 0, 255);
+    text("You Lose!", 80, 400);
+    window.setTimeout(function() {
+      window.location.href = window.location.href;
+    }, 1000*3);
   }
 }
 
@@ -59,8 +64,14 @@ function draw() {
   if (w > (width - 50)) {
     speed2.w = -7;
   } else if (w < 0) {
-    speed2.w = 7;
+    textSize(125);
+    fill(0, 0, 255);
+    text("You Lose!", 80, 400);
+    window.setTimeout(function() {
+      window.location.href = window.location.href;
+    }, 1000*3);
   }
+
 
 if (isInX && isInY) {
   speed.x = -speed.x;
