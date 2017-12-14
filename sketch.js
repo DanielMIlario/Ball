@@ -44,19 +44,22 @@ function isInHeight(ballY) {
 
 function draw() {
   noStroke();
-  background(50, 100, 50)
+  background(50, 100, 50);
+  //Blue ball
   fill(0, 0, 255);
   ellipse(x, y, B1x, B1y);
+  //Red ball
   fill(255, 0, 0);
   ellipse(w, z, B2x, B2y);
+  //Paddle
   fill(0, 255, 0);
   rect(200, mouseY, 20, 150);
-  var isInY = (y > mouseY) && (y < (mouseY + 150))
-  var isInX = (x > 130) && (x < B1x + 100)
-  var isInZ = (z > mouseY) && (z < (mouseY + 150))
-  var isInW = (w > 130) && (w < B2x + 100)
-  var B1g = (B1x <= 0) && (B1y <= 0)
-  var B2g = (B2x <= 0) && (B2y <= 0)
+  var isInX = (x + B1x > 130) && (x < B1x + 100);
+  var isInY = (y > mouseY) && (y < (mouseY + 150));
+  var isInZ = (z > mouseY) && (z < (mouseY + 150));
+  var isInW = (w > 130) && (w < B2x + 100);
+  var B1g = (B1x <= 0) && (B1y <= 0);
+  var B2g = (B2x <= 0) && (B2y <= 0);
   // is in the frame
   isInWidth(x);
   isInHeight(y);
