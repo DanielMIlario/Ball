@@ -54,10 +54,10 @@ function draw() {
   //Paddle
   fill(0, 255, 0);
   rect(200, mouseY, 20, 150);
-  var isInX = (x > 120) && (x < B1x + 100);
+  var isInX = (x + B1x > 200) && (x < B1x + 220);
   var isInY = (y > mouseY) && (y < (mouseY + 150));
   var isInZ = (z > mouseY) && (z < (mouseY + 150));
-  var isInW = (w > 120) && (w < B2x + 100);
+  var isInW = (w + B2x > 200) && (w < B2x + 220);
   var B1g = (B1x <= 0) && (B1y <= 0);
   var B2g = (B2x <= 0) && (B2y <= 0);
   // is in the frame
