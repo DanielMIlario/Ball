@@ -52,9 +52,9 @@ function draw() {
   fill(0, 255, 0);
   rect(200, mouseY, 20, 150);
   var isInY = (y > mouseY) && (y < (mouseY + 150))
-  var isInX = (x > 170) && (x < 250)
+  var isInX = (x > 130) && (x < B1x + 100)
   var isInZ = (z > mouseY) && (z < (mouseY + 150))
-  var isInW = (w > 170) && (w < 250)
+  var isInW = (w > 130) && (w < B2x + 100)
   var B1g = (B1x <= 0) && (B1y <= 0)
   var B2g = (B2x <= 0) && (B2y <= 0)
   // is in the frame
@@ -81,18 +81,24 @@ function draw() {
 
 if (isInX && isInY) {
   speed.x = -speed.x;
-  B1x = B1x - 50;
-  B1y = B1y - 50;
+  speed.y = -speed.y;
+  B1x = B1x * 0.7;
+  B1y = B1y * 0.7;
 }
 if (isInZ && isInW) {
   speed2.w = -speed2.w;
-  B2x = B2x - 50;
-  B2y = B2y - 50;
+  speed2.z = -speed2.z;
+  B2x = B2x * 0.7;
+  B2y = B2y * 0.7;
 }
 if (B1g && B2g) {
   textSize(125);
   fill(0, 0, 255);
   text("Level Completed!", 80, 400);
+  speed.x = 0;
+  speed.y = 0;
+  speed2.w = 0;
+  speed2.z = 0;
 }
   y = y + speed.y;
   x = x + speed.x;
